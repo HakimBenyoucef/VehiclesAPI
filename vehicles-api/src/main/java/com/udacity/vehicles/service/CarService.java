@@ -115,7 +115,6 @@ public class CarService {
 		 * exist, throw a CarNotFoundException
 		 */
 		Optional<Car> result = repository.findById(id);
-
 		if (result.isEmpty()) {
 			throw new CarNotFoundException();
 		}
@@ -123,7 +122,7 @@ public class CarService {
 		/**
 		 * Done: Delete the car from the repository.
 		 */
-		repository.delete(result.get());
+		repository.deleteById(id);
 
 	}
 }
